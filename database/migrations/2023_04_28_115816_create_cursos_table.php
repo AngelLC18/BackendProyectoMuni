@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('legajo') -> unique();
 
             $table->unsignedBigInteger('modalidad_id')->nullable();
-            $table->foreign('modalidad_id')->references('id')->on('modalidades');
+            $table->foreign('modalidad_id')->references('id')->on('modalidads')->onDelete('set null');
             $table->timestamps();
         });
     }

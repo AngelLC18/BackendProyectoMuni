@@ -10,7 +10,7 @@ use App\Models\Modalidad;
 class Curso extends Model
 {
     use HasFactory;
-    protected $fillable = ['nombre', 'descripcion', 'legajo'];
+    protected $fillable = ['nombre', 'descripcion', 'legajo', 'modalidad_id'];
 
     //uno a muchos
     public function modalidad(){

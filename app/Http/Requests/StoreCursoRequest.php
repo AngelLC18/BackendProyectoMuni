@@ -22,9 +22,7 @@ class StoreCursoRequest extends FormRequest
     public function rules(): array
     {
         return [
-                'nombre' => 'required',
-                'descripcion' => 'required',
-                'legajo' => 'required',
+
         ];
     }
 }

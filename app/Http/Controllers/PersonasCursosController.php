@@ -10,17 +10,12 @@ use App\Models\Persona;
 use App\Models\Curso;
 class PersonasCursosController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        return PersonasCursos::all();
+        $personasCursos = PersonasCursos::all();
+        return response()->json($personasCursos);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StorePersonasCursosRequest $request)
     {
         $personasCursos = new PersonasCursos();
@@ -32,18 +27,12 @@ class PersonasCursosController extends Controller
         return response()->json(['success' => 'Relación creada correctamente', 'persona' => $persona]);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(PersonasCursos $request)
+    public function show(PersonasCursos $personasCursos)
     {
-
+        return response()->json(['status' => 'true', 'data' => $personasCursos]);
 
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(UpdatePersonasCursosRequest $request)
     {
         $persona = Persona::find($request->persona_id);
@@ -52,9 +41,6 @@ class PersonasCursosController extends Controller
         return response()->json(['success' => 'Relación actualizada correctamente']);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(PersonasCursos $personasCursos)
     {
         $persona = Persona::find($personasCursos->persona_id);

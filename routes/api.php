@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PersonaController;
 use App\Http\Controllers\CursoController;
 use App\Http\Controllers\PersonasCursosController;
+use App\Http\Controllers\ModalidadController;
 
 //Rutas Personas
 Route::post('personas', [PersonaController::class, 'store']);
@@ -28,8 +29,8 @@ Route::put('personasCursos/{personasCursos}', [PersonasCursosController::class, 
 Route::delete('personasCursos/{personasCursos}', [PersonasCursosController::class, 'destroy']);
 
 //Rutas Modalidad
-Route::post('modalidad', [ModalidadController::class, 'store']);
-Route::get('modalidad', [ModalidadController::class, 'index']);
-Route::get('modalidad/{modalidad}', [ModalidadController::class, 'show']);
-Route::put('modalidad/{modalidad}', [ModalidadController::class, 'update']);
-Route::delete('modalidad/{modalidad}', [ModalidadController::class, 'destroy']);
+Route::post('modalidades', [ModalidadController::class, 'store']);
+Route::get('modalidades', [ModalidadController::class, 'index']);
+Route::get('modalidades/{modalidad}', [ModalidadController::class, 'show']);
+Route::put('modalidades/{modalidad}', [ModalidadController::class, 'update']);
+Route::delete('modalidades/{modalidad}', [ModalidadController::class, 'destroy']);

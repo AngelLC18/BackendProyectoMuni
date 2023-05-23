@@ -23,11 +23,6 @@ class StorePersona extends FormRequest
     {
         return [
             //
-            'nombre' => 'required',
-            'apellido' => 'required',
-            'dni' => 'required',
-            'genero' => 'required',
-            'edad' => 'required',
         ];
     }
 }

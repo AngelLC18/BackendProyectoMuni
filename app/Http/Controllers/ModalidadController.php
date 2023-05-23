@@ -8,17 +8,11 @@ use App\Http\Requests\UpdateModalidadRequest;
 
 class ModalidadController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         return Modalidad::all(); //Devuelve todos los registros
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreModalidadRequest $request)
     {
         $modalidad = new Modalidad(); //Creo un nuevo registro
@@ -28,17 +22,11 @@ class ModalidadController extends Controller
         return $modalidad;
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Modalidad $modalidad)
     {
         return $modalidad; //Devuelve el registro solicitado
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(UpdateModalidadRequest $request, Modalidad $modalidad)
     {
         $modalidad->fill($request->all()); //Completo los campos con los datos del request
@@ -47,9 +35,6 @@ class ModalidadController extends Controller
         return $modalidad;
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Modalidad $modalidad)
     {
         $modalidad->delete(); //Elimino el registro

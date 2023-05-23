@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class ModalidadSeeder extends Seeder
 {
@@ -12,6 +13,15 @@ class ModalidadSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $data = [
+            [
+                'nombre' => 'Individual',
+            ],
+            [
+                'nombre' => 'Grupal',
+            ]
+        ];
+        DB :: table('modalidads')->insert($data);
+
     }
 }

@@ -8,12 +8,9 @@ use App\Http\Requests\UpdateCursoRequest;
 
 class CursoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        return Curso::all();
+        return response()->json(Curso::all());
     }
 
     public function store(StoreCursoRequest $request)
@@ -25,17 +22,11 @@ class CursoController extends Controller
         return $curso;
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Curso $curso)
     {
-        return $curso;
+        return response()->json(['status' => 'true', 'data' => $curso]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(UpdateCursoRequest $request, Curso $curso)
     {
         $curso->fill($request->all());
@@ -44,9 +35,6 @@ class CursoController extends Controller
         return $curso;
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Curso $curso)
     {
         $curso->delete();
