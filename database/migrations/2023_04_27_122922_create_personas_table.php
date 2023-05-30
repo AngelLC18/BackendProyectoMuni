@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('personas', function (Blueprint $table) {
             $table->id();
             $table->string('razonSocial');
-            $table->integer('dni')->unique();
+            $table->integer('dni');
             $table->string('genero');
             $table->string('fechaNacimiento');
             $table->timestamps();

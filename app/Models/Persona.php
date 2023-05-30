@@ -8,7 +8,15 @@ use App\Models\Curso;
 class Persona extends Model
 {
     use HasFactory;
-    protected $fillable = ['id', 'razonSocial', 'dni', 'genero','fechaNacimiento'];
+    protected $table = 'personas'; // Nombre de la tabla en la base de datos
+    protected $fillable = [
+        'id',
+        'razonSocial',
+        'dni',
+        'genero',
+        'fechaNacimiento',
+    ];
+
     public function cursos()
     {
         return $this->belongsToMany(Curso::class);
